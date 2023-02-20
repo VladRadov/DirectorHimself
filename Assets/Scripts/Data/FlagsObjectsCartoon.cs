@@ -1,0 +1,20 @@
+public enum FlagObjectCartoon
+{
+    Babka,
+    Ded,
+    Dog,
+    Kolobok,
+    Kura,
+    Lisa,
+    Muschka,
+    Vnuchka,
+    Volk,
+    Derevo1,
+    Derevo2,
+    Dom1,
+    Polyana1,
+    Polyana2,
+    Sun,
+    Sortir,
+    Gribok
+}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8659ff82394914bbc0b97f951be54f, type: 3}
+  m_Name: Nebo_1
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: f0cd03511d87c6640b972d65ff9e2921, type: 3}
+  _nameSkin: "\u041D\u0435\u0431\u043E"
+  _mainObject: {fileID: 0}
+  _prefabIcon: {fileID: 0}

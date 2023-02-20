@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8659ff82394914bbc0b97f951be54f, type: 3}
+  m_Name: Derevo_2
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: 9f81b99720022cb4cabb1fee2177ff20, type: 3}
+  _nameSkin: "\u0414\u0435\u0440\u0435\u0432\u043E 2"
+  _mainObject: {fileID: 5491930533496733751, guid: f3aa7b529b5191746b1296098165e3ab, type: 3}
+  _prefabIcon: {fileID: 0}
