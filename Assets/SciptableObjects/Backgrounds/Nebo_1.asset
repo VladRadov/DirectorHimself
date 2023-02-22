@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8659ff82394914bbc0b97f951be54f, type: 3}
   m_Name: Nebo_1
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: f0cd03511d87c6640b972d65ff9e2921, type: 3}
+  _icon: {fileID: 21300000, guid: d861b3a90ac2057418f8e1193c5e7408, type: 3}
   _nameSkin: "\u041D\u0435\u0431\u043E"
   _mainObject: {fileID: 0}
   _prefabIcon: {fileID: 0}
+  _hasAnimation: 0
