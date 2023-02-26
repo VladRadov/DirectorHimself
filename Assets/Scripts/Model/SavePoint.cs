@@ -22,9 +22,11 @@ public class SavePoint : MonoBehaviour
 
     public void SetPosition(Vector2 positionObjectCartoon, Vector2 sizeCollider)
     {
-        float offsetPosition = 3.0f;
-        var x = 0.0f;
-        var y = sizeCollider.y / 2 + offsetPosition;
-        transform.position = positionObjectCartoon + new Vector2(x, y);
+        //float offsetPosition = 3.0f;
+        //var x = 0.0f;
+        //var y = sizeCollider.y / 2 + offsetPosition;
+        //transform.position = positionObjectCartoon + new Vector2(x, y);
+
+        transform.position = positionObjectCartoon;
     }
 }
