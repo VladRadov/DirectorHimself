@@ -15,11 +15,11 @@ D:/Projects/DirectorHimself
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64699
+62105
 Successfully changed project path to: D:/Projects/DirectorHimself
 D:/Projects/DirectorHimself
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 71.16 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 133.00 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.40f1 (ba48d4efcef1)
 [Subsystems] Discovering subsystems at path D:/Software/2020.3.40f1/Editor/Data/Resources/UnitySubsystems
@@ -35,232 +35,92 @@ Initialize mono
 Mono path[0] = 'D:/Software/2020.3.40f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Software/2020.3.40f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Software/2020.3.40f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Software/2020.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.216582 seconds.
+Registered in 0.003294 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 50.43 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 77.68 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.087 seconds
+- Completed reload, in  1.675 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5087ms)
-		BeginReloadAssembly (3671ms)
+	ReloadAssembly (1676ms)
+		BeginReloadAssembly (112ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (970ms)
-			LoadAssemblies (3670ms)
+		EndReloadAssembly (1340ms)
+			LoadAssemblies (112ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (604ms)
+			SetupTypeCache (581ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (200ms)
+			RebuildScriptCaches (130ms)
+			SetupLoadedEditorAssemblies (260ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (50ms)
-				BeforeProcessingInitializeOnLoad (20ms)
-				ProcessInitializeOnLoadAttributes (87ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				RefreshPlugins (78ms)
+				BeforeProcessingInitializeOnLoad (29ms)
+				ProcessInitializeOnLoadAttributes (113ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002139 seconds.
+Registered in 0.008290 seconds.
 Begin MonoManager ReloadAssembly
+Error: Could not load signature of MySql.Data.MySqlClient.MySqlPoolManager:UnloadAssemblyLoadContext due to: Could not resolve type with token 01000113 (from typeref, class/assembly System.Runtime.Loader.AssemblyLoadContext, System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) assembly:System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a type:System.Runtime.Loader.AssemblyLoadContext member:(null) signature:<none>
+Unloading broken assembly Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll, this assembly can cause crashes in the runtime
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 49.82 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 118.96 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+DisplayProgressbar: Restoring NuGet Packages
 Mono: successfully reloaded assembly
-- Completed reload, in  6.507 seconds
+- Completed reload, in  3.270 seconds
 Domain Reload Profiling:
-	ReloadAssembly (6508ms)
-		BeginReloadAssembly (158ms)
+	ReloadAssembly (3272ms)
+		BeginReloadAssembly (347ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (13ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (6290ms)
-			LoadAssemblies (3330ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (2781ms)
+			LoadAssemblies (217ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1163ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (1624ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (50ms)
-				BeforeProcessingInitializeOnLoad (79ms)
-				ProcessInitializeOnLoadAttributes (458ms)
-				ProcessInitializeOnLoadMethodAttributes (1031ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (2ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2230 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 97.8 MB.
-System memory in use after: 97.7 MB.
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 2664.
-Total: 3.304000 ms (FindLiveObjects: 0.194700 ms CreateObjectMapping: 0.080800 ms MarkObjects: 2.890100 ms  DeleteObjects: 0.137600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Sprites/UI/Shar.png
-  artifactKey: Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/Shar.png using Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d65496597d7426bfb9e777d5c1040b') in 0.143538 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 62.661705 seconds.
-  path: Assets/Sprites/UI/Shar.png
-  artifactKey: Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/Shar.png using Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1fe889d912056ce38f7539e76ad2f2') in 0.018376 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.465806 seconds.
-  path: Assets/Sprites/UI/Shar.png
-  artifactKey: Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/Shar.png using Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96d934a2e8473c9a9c7898fdf9b8457') in 0.020637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 86.927586 seconds.
-  path: Assets/Sprites/UI/Shar.png
-  artifactKey: Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/UI/Shar.png using Guid(cbe47d789080b0a4dab15f84a3b6a9ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1b9610d0042f6b68b738f33e1478d78') in 0.022556 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001840 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.022 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1022ms)
-		BeginReloadAssembly (104ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (863ms)
-			LoadAssemblies (86ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (312ms)
+			SetupTypeCache (867ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (49ms)
-			SetupLoadedEditorAssemblies (314ms)
+			RebuildScriptCaches (140ms)
+			SetupLoadedEditorAssemblies (1225ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (76ms)
-				ProcessInitializeOnLoadAttributes (213ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2225 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 100.7 MB.
-System memory in use after: 100.7 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2674.
-Total: 2.936500 ms (FindLiveObjects: 0.193700 ms CreateObjectMapping: 0.119000 ms MarkObjects: 2.494900 ms  DeleteObjects: 0.128000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 609.811003 seconds.
-  path: Assets/Sprites/Backgrounds/Nebo_1.jpg
-  artifactKey: Guid(d861b3a90ac2057418f8e1193c5e7408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Backgrounds/Nebo_1.jpg using Guid(d861b3a90ac2057418f8e1193c5e7408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b67d211874d71e8e3a01b7b629f9795') in 0.426466 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001971 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.080 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1080ms)
-		BeginReloadAssembly (116ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (902ms)
-			LoadAssemblies (99ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (334ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (323ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (82ms)
-				ProcessInitializeOnLoadAttributes (216ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				RefreshPlugins (119ms)
+				BeforeProcessingInitializeOnLoad (198ms)
+				ProcessInitializeOnLoadAttributes (839ms)
+				ProcessInitializeOnLoadMethodAttributes (51ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.49 ms, found 3 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2225 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 100.8 MB.
-System memory in use after: 100.7 MB.
+Unloading 2257 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.1 MB.
+System memory in use after: 99.0 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2680.
-Total: 3.440800 ms (FindLiveObjects: 0.166300 ms CreateObjectMapping: 0.071500 ms MarkObjects: 3.082900 ms  DeleteObjects: 0.119200 ms)
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 2668.
+Total: 4.153900 ms (FindLiveObjects: 0.197100 ms CreateObjectMapping: 0.112300 ms MarkObjects: 3.665200 ms  DeleteObjects: 0.177900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -275,8 +135,149 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 27.091060 seconds.
-  path: Assets/SciptableObjects/Backgrounds/Nebo_1.asset
-  artifactKey: Guid(5f7f3829a6f668944a22b2e0ddbf24b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SciptableObjects/Backgrounds/Nebo_1.asset using Guid(5f7f3829a6f668944a22b2e0ddbf24b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e1df9590d02e3a09cbd5660789cee49') in 0.014024 seconds 
+  path: Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll
+  artifactKey: Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll using Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e56ecabb0339812e27ba9502c5e9ea6c') in 0.036146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000571 seconds.
+  path: Assets/Packages/MySql.Data.8.0.32/lib
+  artifactKey: Guid(579be9cc22a5f304ebf6dbc4582f2b06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/MySql.Data.8.0.32/lib using Guid(579be9cc22a5f304ebf6dbc4582f2b06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06a9996d73eb63636d0560fe54bb147') in 0.012603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000392 seconds.
+  path: Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0
+  artifactKey: Guid(2aa01e69368516b4c8acc52e7bac736e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0 using Guid(2aa01e69368516b4c8acc52e7bac736e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '226e652638ad02b703e3eb9e17cf8efe') in 0.007450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.760671 seconds.
+  path: Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll
+  artifactKey: Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll using Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f2fc160d6b471cecd6b237a9349094') in 0.002497 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006645 seconds.
+Begin MonoManager ReloadAssembly
+Error: Could not load signature of MySql.Data.MySqlClient.MySqlPoolManager:UnloadAssemblyLoadContext due to: Could not resolve type with token 01000113 (from typeref, class/assembly System.Runtime.Loader.AssemblyLoadContext, System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) assembly:System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a type:System.Runtime.Loader.AssemblyLoadContext member:(null) signature:<none>
+Unloading broken assembly Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.74 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  7.338 seconds
+Domain Reload Profiling:
+	ReloadAssembly (7339ms)
+		BeginReloadAssembly (275ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (6850ms)
+			LoadAssemblies (290ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (879ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (1394ms)
+			SetupLoadedEditorAssemblies (1444ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (952ms)
+				ProcessInitializeOnLoadAttributes (434ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.48 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2252 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.0 MB.
+System memory in use after: 99.0 MB.
+
+Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 2671.
+Total: 4.754600 ms (FindLiveObjects: 0.254400 ms CreateObjectMapping: 0.139800 ms MarkObjects: 4.191000 ms  DeleteObjects: 0.168400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 29.205771 seconds.
+  path: Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll
+  artifactKey: Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll using Guid(11ca60b13508a5e438dc9ab8c353ef2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a3851b362223de6cd291f00852b2929') in 0.006018 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009590 seconds.
+Begin MonoManager ReloadAssembly
+Error: Could not load signature of MySql.Data.MySqlClient.MySqlPoolManager:UnloadAssemblyLoadContext due to: Could not resolve type with token 01000113 (from typeref, class/assembly System.Runtime.Loader.AssemblyLoadContext, System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a) assembly:System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a type:System.Runtime.Loader.AssemblyLoadContext member:(null) signature:<none>
+Unloading broken assembly Assets/Packages/MySql.Data.8.0.32/lib/netstandard2.0/MySql.Data.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.50 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.651 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2652ms)
+		BeginReloadAssembly (265ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (20ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (85ms)
+		EndReloadAssembly (2240ms)
+			LoadAssemblies (228ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (723ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (137ms)
+			SetupLoadedEditorAssemblies (886ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (228ms)
+				ProcessInitializeOnLoadAttributes (594ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.43 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2252 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.1 MB.
+System memory in use after: 99.0 MB.
+
+Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 2674.
+Total: 6.214700 ms (FindLiveObjects: 0.288400 ms CreateObjectMapping: 0.202800 ms MarkObjects: 5.429800 ms  DeleteObjects: 0.292000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
