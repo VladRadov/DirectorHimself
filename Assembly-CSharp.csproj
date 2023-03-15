@@ -54,20 +54,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\Projects\DirectorHimself\Assets\DirectorHimself\Plugins\MySql.Data.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Model\ObjectCartoon.cs" />
-    <Compile Include="Assets\Scripts\Data\FlagsObjectsCartoon.cs" />
-    <Compile Include="Assets\Scripts\Data\Item.cs" />
-    <Compile Include="Assets\Scripts\UI\ManagerItem.cs" />
-    <Compile Include="Assets\Scripts\UI\ViewItems.cs" />
-    <Compile Include="Assets\Scripts\Model\SavePoint.cs" />
-    <Compile Include="Assets\Scripts\Services\SQL.cs" />
-    <Compile Include="Assets\Scripts\Services\ManagerObjectsCartoon.cs" />
-    <Compile Include="Assets\Scripts\UI\ManagerPropertiesPanel.cs" />
-    <Compile Include="Assets\Scripts\Services\PoolObjects.cs" />
-    <Compile Include="Assets\Scripts\UI\ManagerIcon.cs" />
-    <Compile Include="Assets\Scripts\Data\StringSqlConnection.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Model\ObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\FlagsObjectsCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Item.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerItem.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewItems.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Model\SavePoint.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\SQL.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\ManagerObjectsCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\StringSqlConnection.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerPropertiesPanel.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\PoolObjects.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -293,7 +298,7 @@
       <HintPath>D:\Software\2020.3.40f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>Assets\Plugins\MySql.Data.dll</HintPath>
+      <HintPath>Assets\DirectorHimself\Plugins\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:\Software\2020.3.40f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
