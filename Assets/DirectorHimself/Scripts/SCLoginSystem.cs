@@ -13,12 +13,15 @@ public class SCLoginSystem : MonoBehaviour
     public CurrentWindow currentWindow = CurrentWindow.Login;
     public GameObject LoginSystem; 
     public GameObject AllObject;
+    public GameObject ReEntry_Men;
+    
+    public GameObject ReEntry_Women;
 
     public int textSize = 28;
     public Font textFont;
     public Color textColor = Color.white;
 
-    string loginlogin = "";
+    string loginEmail = "";
     string loginPassword = "";
     string registerEmail = "";
     string registerPassword1 = "";
@@ -31,13 +34,17 @@ public class SCLoginSystem : MonoBehaviour
     bool isLoggedIn = false;
 
     //Данные авторизованного пользователя
-    string username = "";
-    string userlogin = "";
-    string user_money = "";
-    string namegroup = "";
-    string idgroup = "";
+    string userName = "";
+    string userEmail = "";
 
-    string rootURL = "https://m.mymafia.su/"; //Путь, по которому расположены файлы php
+    string rootURL = "http://m.mymafia.su/"; //Путь, по которому расположены файлы php
+
+    private int NumberCar;
+
+    void Start()// Старт вызывается перед обновлением первого кадра
+    {
+        //NumberCar = PlayerPrefs.GetInt("Car");
+    }
 
     void OnGUI()
     {
@@ -58,17 +65,101 @@ public class SCLoginSystem : MonoBehaviour
         style2.richText = true;
         if (textFont) style2.font = textFont;
         style2.normal.textColor = textColor;
-        GUI.Label(new Rect(5, 35, 250, 325), " Ваш Статус: " + (isLoggedIn ? " В игре. \n Данные авторизации: " + userlogin + "\n Nick: " + username + "\n Баланс:" + user_money + "\n Клан:" + namegroup + idgroup: "Не в игре"), style2);
+        GUI.Label(new Rect(170, 10, 500, 25), "Статус: " + (isLoggedIn ? "В игре.  Ваш Nick: " + userName + " Ваш Email: " + userEmail : "Не в игре"), style2);
         if (isLoggedIn)
         {
             LoginSystem.SetActive(false);
-            AllObject.SetActive(true);
-           
-            if (GUI.Button(new Rect(5, 5, 250, 25), "Сменить Авторизацию"))
+            NumberCar = PlayerPrefs.GetInt("Car");
+            if (NumberCar == 1)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 2)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 3)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 4)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 5)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 6)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 7)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 8)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 9)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 10)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 11)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 12)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 13)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 14)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 15)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 16)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 17)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 18)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else if (NumberCar == 19)
+            {
+                ReEntry_Men.SetActive(true);
+            }
+            else if (NumberCar == 20)
+            {
+                ReEntry_Women.SetActive(true);
+            }
+            else
+            {
+                AllObject.SetActive(true);
+            }
+          
+            if (GUI.Button(new Rect(5, 5, 150, 25), "Сменить Авторизацию"))
             {
                 isLoggedIn = false;
-                username = "";
-                userlogin = "";
+                userName = "";
+                userEmail = "";
                 currentWindow = CurrentWindow.Login;
                 LoginSystem.SetActive(true);
                 AllObject.SetActive(false);
@@ -95,8 +186,8 @@ public class SCLoginSystem : MonoBehaviour
         }
 
         GUI.color = Color.white;
-        GUILayout.Label("login:");
-        loginlogin = GUILayout.TextField(loginlogin);
+        GUILayout.Label("Email:");
+        loginEmail = GUILayout.TextField(loginEmail);
         GUILayout.Label("Password:");
         loginPassword = GUILayout.PasswordField(loginPassword, '*');
 
@@ -199,18 +290,14 @@ public class SCLoginSystem : MonoBehaviour
 
     IEnumerator LoginEnumerator()
     {
-        var addPlayerLogin = new AddPlayerLogin(1, "Test");
-        addPlayerLogin.Execute();
-        //var parts = addPlayerLogin.ParsingTableResult(0, 0);
-
         isWorking = true;
         registrationCompleted = false;
         errorMessage = "";
 
         WWWForm form = new WWWForm();
-        form.AddField("login", loginlogin);
+        form.AddField("email", loginEmail);
         form.AddField("password", loginPassword);
-        
+
         using (UnityWebRequest www = UnityWebRequest.Post(rootURL + "login.php", form))
         {
             yield return www.SendWebRequest();
@@ -226,12 +313,9 @@ public class SCLoginSystem : MonoBehaviour
                 if (responseText.StartsWith("Success"))
                 {
                     string[] dataChunks = responseText.Split('|');
-                    username = dataChunks[1];
-                    userlogin = dataChunks[2];
-                    user_money = dataChunks[3];
-                    namegroup = dataChunks[4];
-                    idgroup = dataChunks[5];
-                    
+                    userName = dataChunks[1];
+                    userEmail = dataChunks[2];
+                   
                     isLoggedIn = true;
                     Save();
                     ResetValues();
@@ -248,22 +332,22 @@ public class SCLoginSystem : MonoBehaviour
     
     public void Save()
     {
-        //string key = "Nick";
-        //PlayerPrefs.SetString(key, username);
-        PlayerPrefs.SetString("UserName", username);
-        string moneykey = "Money";
-        PlayerPrefs.SetString(moneykey, user_money);
-        string groupkey = "Group";
-        PlayerPrefs.SetString(groupkey, namegroup);
-       
-        PlayerPrefs.Save();
-        Debug.Log("Username: " + username + "Баланс" + user_money + "Клан:" + namegroup );
-    }
+        var addPlayerLogin = new AddPlayerLogin(userName, userEmail);
+        addPlayerLogin.Execute();
 
+        PlayerPrefs.SetString("nick", userName);
+        PlayerPrefs.SetString("email", userEmail);
+        PlayerPrefs.SetInt("IdPlayer", addPlayerLogin.IdPLayer);
+        PlayerPrefs.Save();
+
+        Debug.Log("Username: " + userName);
+
+        ControllerScenes.LoadScene(1);
+    }
     void ResetValues()
     {
         errorMessage = "";
-        loginlogin = "";
+        loginEmail = "";
         loginPassword = "";
         registerEmail = "";
         registerPassword1 = "";

@@ -54,7 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\Projects\DirectorHimself\Assets\DirectorHimself\Plugins\MySql.Data.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DirectorHimself\Scripts\Model\ObjectCartoon.cs" />
@@ -70,6 +69,13 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Services\PoolObjects.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Player.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ControllerScenes.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\PlayerController.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Cartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\ICartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\DataObjectCartoon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

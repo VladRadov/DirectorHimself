@@ -110,15 +110,19 @@ class BaseSqlQuery
 
 class AddPlayerLogin : BaseSqlQuery
 {
-    private int _id;
-
     private string _nickname;
 
-    public AddPlayerLogin(int id, string nickname)
+    private string _email;
+
+    private int _idPlayer;
+
+    public AddPlayerLogin(string nickname, string email)
     {
-        _id = id;
         _nickname = nickname;
+        _email = email;
     }
+
+    public int IdPLayer => _idPlayer;
 
     public override void Execute() => base.Execute();
 
@@ -126,8 +130,34 @@ class AddPlayerLogin : BaseSqlQuery
     {
         _command.CommandType = CommandType.StoredProcedure;
         _command.CommandText = "AddPlayer";
-        _command.Parameters.AddWithValue("InID", SqlDbType.Int).Value = _id;
-        _command.Parameters.AddWithValue("InNickname", SqlDbType.VarChar).Value = _nickname;
+        _command.Parameters.AddWithValue("InNickname", _nickname);
+        _command.Parameters.AddWithValue("InEmail", _email);
+        _command.Parameters.AddWithValue("IdPlayer", _idPlayer).Direction = ParameterDirection.Output;
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class GetCartoons : BaseSqlQuery
+{
+    private string _nickname;
+
+    private string _email;
+
+    public GetCartoons(string nickname, string email)
+    {
+        _nickname = nickname;
+        _email = email;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "GetCartoons";
+        _command.Parameters.AddWithValue("NickPlayer", _nickname);
+        _command.Parameters.AddWithValue("EmailPlayer", _email);
     }
 
     protected override void CreateQuery() => base.CreateQuery();
