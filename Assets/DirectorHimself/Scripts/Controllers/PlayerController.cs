@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController
 {
     private Player _player;
 
-    private void Start()
+    private CartoonsController _cartoonsController;
+
+    public void LoadData()
     {
         _player = new Player();
+        _cartoonsController = new CartoonsController();
+
         _player.Nickname = PlayerPrefs.GetString("nick");
         _player.Email = PlayerPrefs.GetString("email");
         _player.Id = PlayerPrefs.GetInt("IdPlayer");
@@ -26,11 +30,10 @@ public class PlayerController : MonoBehaviour
 
             for (int i = 0; i < countItems; i++)
             {
-                var cartoon = new Cartoon();
-                cartoon.Id = Convert.ToInt32(getCartoons.ParsingTableResult(i, 0));
-                cartoon.Name = Convert.ToString(getCartoons.ParsingTableResult(i, 1));
+                var idCartoon = Convert.ToInt32(getCartoons.ParsingTableResult(i, 0));
+                var nameCartoon = Convert.ToString(getCartoons.ParsingTableResult(i, 1));
 
-                _player.Cartoons.Add(cartoon);
+                _player.Cartoons.Add(_cartoonsController.CreateCartoon(idCartoon, nameCartoon));
             }
         }
     }

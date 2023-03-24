@@ -76,6 +76,9 @@
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonsController.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Game.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerCartoonsPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />
