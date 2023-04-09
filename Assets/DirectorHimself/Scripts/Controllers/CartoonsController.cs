@@ -1,5 +1,18 @@
+using System.Collections;
+using UnityEngine.Events;
+
 public class CartoonsController
 {
+    private ManagerCartoonsPanel _managerCartoonsPanel;
+
+    private CartoonObjectController _cartoonObjectController;
+
+    public CartoonsController(ManagerCartoonsPanel managerCartoonsPanel)
+    {
+        _managerCartoonsPanel = managerCartoonsPanel;
+        _cartoonObjectController = new CartoonObjectController();
+    }
+
     public Cartoon CreateCartoon(int id, string name)
     {
         var cartoon = new Cartoon()
@@ -10,4 +23,18 @@ public class CartoonsController
 
         return cartoon;
     }
+
+    public void ShowAddedCartoon(string nameCartoon) => _managerCartoonsPanel.CreateViewCartoonName(nameCartoon);
+
+    public void AddListenerForAddCartoonEventhandler(UnityAction<string> action) => _managerCartoonsPanel.AddCartoonEventhandler.AddListener(action);
+
+    public void GetSavedCartoons(IEnumerable cartoons)
+    {
+        foreach (ICartoon cartoon in cartoons)
+            _managerCartoonsPanel.CreateViewCartoonName(cartoon.Name); 
+    }
+
+    public void ShowCartoonsPanel() => _managerCartoonsPanel.ShowCartoons(true);
+
+    public void SelectedErrorInputFieldAddCartoon() => _managerCartoonsPanel.SelectedErrorInputFieldAddCartoon();
 }

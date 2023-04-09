@@ -62,9 +62,13 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Data\FlagsObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Item.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Cartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Game.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonsController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerItem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\ICartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewNameCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewItems.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerCartoonsPanel.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\DataObjectCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Model\SavePoint.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ControllerScenes.cs" />
@@ -72,13 +76,12 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Services\ManagerObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\StringSqlConnection.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerPropertiesPanel.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerAddCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\PoolObjects.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonsController.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Game.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerCartoonsPanel.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonObjectController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

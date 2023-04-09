@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using UnityEngine;
 
 public class Connection
 {
@@ -83,18 +84,13 @@ class BaseSqlQuery
             int countRows = 0;
             while (reader.Read())
             {
-                object firstSubitem = new object();
-                object[] subitems = new object[reader.FieldCount - 1];
+                object[] subitems = new object[reader.FieldCount];
                 for (int i = 0; i < reader.FieldCount; i++)
-                {
-                    if (i == 0)
-                        firstSubitem = reader.GetValue(i);
-                    else
-                        subitems[i] = reader.GetValue(i);
-                }
+                    subitems[i] = reader.GetValue(i);
 
-                _tableResult.Rows.Add(firstSubitem);
-                _tableResult.Rows[countRows].ItemArray = subitems;
+                var row = _tableResult.NewRow();
+                row.ItemArray = subitems;
+                _tableResult.Rows.Add(row);
 
                 ++countRows;
             }
@@ -108,31 +104,26 @@ class BaseSqlQuery
     public object ParsingTableResult(int indexRow, int indexColumn) => _tableResult.Rows[indexRow].ItemArray[indexColumn];
 }
 
-class AddPlayerLogin : BaseSqlQuery
+class GetPlayer : BaseSqlQuery
 {
     private string _nickname;
 
     private string _email;
 
-    private int _idPlayer;
-
-    public AddPlayerLogin(string nickname, string email)
+    public GetPlayer(string nickname, string email)
     {
         _nickname = nickname;
         _email = email;
     }
-
-    public int IdPLayer => _idPlayer;
 
     public override void Execute() => base.Execute();
 
     protected override void CreateCommand()
     {
         _command.CommandType = CommandType.StoredProcedure;
-        _command.CommandText = "AddPlayer";
+        _command.CommandText = "GetPlayer";
         _command.Parameters.AddWithValue("InNickname", _nickname);
         _command.Parameters.AddWithValue("InEmail", _email);
-        _command.Parameters.AddWithValue("IdPlayer", _idPlayer).Direction = ParameterDirection.Output;
     }
 
     protected override void CreateQuery() => base.CreateQuery();
@@ -158,6 +149,61 @@ class GetCartoons : BaseSqlQuery
         _command.CommandText = "GetCartoons";
         _command.Parameters.AddWithValue("NickPlayer", _nickname);
         _command.Parameters.AddWithValue("EmailPlayer", _email);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class AddCartoon : BaseSqlQuery
+{
+    private string _nameCartoon;
+
+    private int _idPlayer;
+
+    public AddCartoon(int idPlayer, string nameCartoon)
+    {
+        _nameCartoon = nameCartoon;
+        _idPlayer = idPlayer;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "AddCartoon";
+        _command.Parameters.AddWithValue("InName", _nameCartoon);
+        _command.Parameters.AddWithValue("InIdPlayer", _idPlayer);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class AddCartoonObject : BaseSqlQuery
+{
+    private IObjectCartoon _cartoonObject;
+
+    private int _idPlayer;
+
+    public AddCartoonObject(int idPlayer, IObjectCartoon cartoonObject)
+    {
+        _idPlayer = idPlayer;
+        _cartoonObject = cartoonObject;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "AddCartoonObject";
+        _command.Parameters.AddWithValue("InIdPlayer", _idPlayer);
+        _command.Parameters.AddWithValue("InName", _cartoonObject.Name);
+        _command.Parameters.AddWithValue("InPositionX", _cartoonObject.PositionStartX);
+        _command.Parameters.AddWithValue("InPositionY", _cartoonObject.PositionStartY);
+        _command.Parameters.AddWithValue("InSizeX", _cartoonObject.ScaleX);
+        _command.Parameters.AddWithValue("InSizeY", _cartoonObject.ScaleY);
+        _command.Parameters.AddWithValue("OutIdCartoonObject", _idPlayer).Direction = ParameterDirection.Output;
     }
 
     protected override void CreateQuery() => base.CreateQuery();

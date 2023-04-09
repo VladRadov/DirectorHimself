@@ -1,5 +1,9 @@
 public interface IObjectCartoon
 {
+    int Id { get; set; }
+
+    string Name { get; set; }
+
     float PositionStartX { get; set; }
 
     float PositionStartY { get; set; }

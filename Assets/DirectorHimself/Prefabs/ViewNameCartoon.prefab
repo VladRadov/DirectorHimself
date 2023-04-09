@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340194087471217188}
   - component: {fileID: 4644874948282997463}
+  - component: {fileID: -4093148177924237161}
   m_Layer: 5
   m_Name: ViewNameCartoon
   m_TagString: Untagged
@@ -136,3 +137,16 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &-4093148177924237161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224787574590270466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1189d89334da9f468f3ac3744985312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewName: {fileID: 5646729904131617318}

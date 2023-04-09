@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent (typeof(SpriteRenderer))]
 
-public class ObjectCartoon : MonoBehaviour
+public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 {
     private bool _isMove;
 
@@ -44,13 +44,38 @@ public class ObjectCartoon : MonoBehaviour
 
     public Vector2 MousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    public float PositionStartX { get; set; }
+
+    public float PositionStartY { get; set; }
+
+    public float ScaleX { get; set; }
+
+    public float ScaleY { get; set; }
+
+    public string NameAnimation { get; set; }
+
+    public float PositionFinishX { get; set; }
+
+    public float PositionFinishY { get; set; }
+
     private void Start()
     {
         _transform = transform;
         _isMove = false;
         _isSelected = false;
+
         _rigidbody.interpolation = RigidbodyInterpolation2D.Interpolate;
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
+
+        Name = NameFlagObjectCartoon.ToString();
+        PositionStartX = _transform.position.x;
+        PositionStartY = _transform.position.y;
+        ScaleX = _transform.localScale.x;
+        ScaleY = _transform.localScale.y;
     }
 
     public void SetFlagHasAnimation(bool value) => _hasAnimation = value;

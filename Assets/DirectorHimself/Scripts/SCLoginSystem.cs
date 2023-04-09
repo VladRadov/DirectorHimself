@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Text.RegularExpressions;
 using System.IO;
+using System;
 
 [ExecuteInEditMode]
 
@@ -332,12 +333,13 @@ public class SCLoginSystem : MonoBehaviour
     
     public void Save()
     {
-        var addPlayerLogin = new AddPlayerLogin(userName, userEmail);
-        addPlayerLogin.Execute();
+        var player = new GetPlayer(userName, userEmail);
+        player.Execute();
+        var idPlayer = Convert.ToInt32(player.ParsingTableResult(0, 0));
 
         PlayerPrefs.SetString("nick", userName);
         PlayerPrefs.SetString("email", userEmail);
-        PlayerPrefs.SetInt("IdPlayer", addPlayerLogin.IdPLayer);
+        PlayerPrefs.SetInt("IdPlayer", idPlayer);
         PlayerPrefs.Save();
 
         Debug.Log("Username: " + userName);
