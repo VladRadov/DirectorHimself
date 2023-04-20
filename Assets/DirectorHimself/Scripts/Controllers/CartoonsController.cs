@@ -5,12 +5,9 @@ public class CartoonsController
 {
     private ManagerCartoonsPanel _managerCartoonsPanel;
 
-    private CartoonObjectController _cartoonObjectController;
-
     public CartoonsController(ManagerCartoonsPanel managerCartoonsPanel)
     {
         _managerCartoonsPanel = managerCartoonsPanel;
-        _cartoonObjectController = new CartoonObjectController();
     }
 
     public Cartoon CreateCartoon(int id, string name)

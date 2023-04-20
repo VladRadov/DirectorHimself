@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class PlayerController
 {
-    private Player _player;
-
     private CartoonsController _cartoonsController;
 
     public UnityEvent<string> AddedCartoon = new UnityEvent<string>();
@@ -22,14 +20,12 @@ public class PlayerController
 
     public void LoadData()
     {
-        _player = new Player();
+        Player.Instance.Nickname = PlayerPrefs.GetString("nick");
+        Player.Instance.Email = PlayerPrefs.GetString("email");
+        Player.Instance.Id = PlayerPrefs.GetInt("IdPlayer");
+        Player.Instance.Cartoons = new List<ICartoon>();
 
-        _player.Nickname = PlayerPrefs.GetString("nick");
-        _player.Email = PlayerPrefs.GetString("email");
-        _player.Id = PlayerPrefs.GetInt("IdPlayer");
-        _player.Cartoons = new List<ICartoon>();
-
-        var getCartoons = new GetCartoons(_player.Nickname, _player.Email);
+        var getCartoons = new GetCartoons(Player.Instance.Nickname, Player.Instance.Email);
         getCartoons.Execute();
 
         var countItems = getCartoons.CounItems();
@@ -43,24 +39,24 @@ public class PlayerController
                 var idCartoon = Convert.ToInt32(getCartoons.ParsingTableResult(i, 0));
                 var nameCartoon = Convert.ToString(getCartoons.ParsingTableResult(i, 1));
 
-                _player.Cartoons.Add(_cartoonsController.CreateCartoon(idCartoon, nameCartoon));
+                Player.Instance.Cartoons.Add(_cartoonsController.CreateCartoon(idCartoon, nameCartoon));
             }
         }
     }
 
-    public IEnumerable GetSavedCartoons() => _player.Cartoons;
+    public IEnumerable GetSavedCartoons() => Player.Instance.Cartoons;
 
-    public bool HasSavedCaroons() => _player.Cartoons != null ? true : false;
+    public bool HasSavedCaroons() => Player.Instance.Cartoons != null ? true : false;
 
     public void AddCartoon(string nameCartoon)
     {
-        var addCartoon = new AddCartoon(_player.Id, nameCartoon);
+        var addCartoon = new AddCartoon(Player.Instance.Id, nameCartoon);
         addCartoon.Execute();
         int idCartoon = 0;
 
         if (int.TryParse(addCartoon.ParsingTableResult(0, 0).ToString(), out idCartoon))
         {
-            _player.Cartoons.Add(_cartoonsController.CreateCartoon(idCartoon, nameCartoon));
+            Player.Instance.Cartoons.Add(_cartoonsController.CreateCartoon(idCartoon, nameCartoon));
             AddedCartoon.Invoke(nameCartoon);
         }
         else

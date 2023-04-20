@@ -13,6 +13,11 @@ public class ViewItems : MonoBehaviour
 
     [SerializeField] private Transform _timeline;
 
+    private void Start()
+    {
+        View();
+    }
+
     public void View()
     {
         PoolObjects<ManagerItem>.DisactiveObjects();

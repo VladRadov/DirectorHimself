@@ -72,6 +72,7 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Data\DataObjectCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Model\SavePoint.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ControllerScenes.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ObjectCartoonController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\SQL.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\ManagerObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\StringSqlConnection.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonObjectController.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\Converter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

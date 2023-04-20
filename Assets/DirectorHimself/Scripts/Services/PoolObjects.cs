@@ -34,6 +34,8 @@ public class PoolObjects<T> where T : MonoBehaviour
                 currentObject.gameObject.SetActive(false);
         }
     }
+
+    public static T Find(System.Predicate<T> predicat) => _objects.Find(predicat);
 }
 
 class PoolObjectsCartoon : PoolObjects<ObjectCartoon>

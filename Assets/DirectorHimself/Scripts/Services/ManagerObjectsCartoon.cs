@@ -8,7 +8,6 @@ public class ManagerObjectsCartoon : MonoBehaviour
 
     private void Start()
     {
-        var instance = Connection.Instance;
         _managerPropertiesPanel.ChangeActiveWindowEventHandler.AddListener(AllocationOnPlayWindowsSelectedObjects);
     }
 

@@ -185,9 +185,15 @@ class AddCartoonObject : BaseSqlQuery
 
     private int _idPlayer;
 
-    public AddCartoonObject(int idPlayer, IObjectCartoon cartoonObject)
+    private int _idCartoon;
+
+    private string _nameObjectCartoon;
+
+    public AddCartoonObject(int idPlayer, int idCartoon, string nameObjectCartoon, IObjectCartoon cartoonObject)
     {
         _idPlayer = idPlayer;
+        _idCartoon = idCartoon;
+        _nameObjectCartoon = nameObjectCartoon;
         _cartoonObject = cartoonObject;
     }
 
@@ -198,12 +204,66 @@ class AddCartoonObject : BaseSqlQuery
         _command.CommandType = CommandType.StoredProcedure;
         _command.CommandText = "AddCartoonObject";
         _command.Parameters.AddWithValue("InIdPlayer", _idPlayer);
-        _command.Parameters.AddWithValue("InName", _cartoonObject.Name);
+        _command.Parameters.AddWithValue("InIdCartoon", _idCartoon);
+        _command.Parameters.AddWithValue("InNameObjectCartoon", _nameObjectCartoon);
         _command.Parameters.AddWithValue("InPositionX", _cartoonObject.PositionStartX);
         _command.Parameters.AddWithValue("InPositionY", _cartoonObject.PositionStartY);
         _command.Parameters.AddWithValue("InSizeX", _cartoonObject.ScaleX);
         _command.Parameters.AddWithValue("InSizeY", _cartoonObject.ScaleY);
-        _command.Parameters.AddWithValue("OutIdCartoonObject", _idPlayer).Direction = ParameterDirection.Output;
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class GetObjectsCartoon : BaseSqlQuery
+{
+    private int _idPlayer;
+
+    private string _nameCartoon;
+
+    public GetObjectsCartoon(int idPlayer, string nameCartoon)
+    {
+        _idPlayer = idPlayer;
+        _nameCartoon = nameCartoon;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "GetObjectsCartoon";
+        _command.Parameters.AddWithValue("InIdPLayer", _idPlayer);
+        _command.Parameters.AddWithValue("InNameObjectCartoon", _nameCartoon);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class ChangeStartPositionObjectCartoon : BaseSqlQuery
+{
+    private int _idObjectCartoon;
+
+    private float _positionX;
+
+    private float _positionY;
+
+    public ChangeStartPositionObjectCartoon(int idObjectCartoon, float positionX, float positionY)
+    {
+        _idObjectCartoon = idObjectCartoon;
+        _positionX = positionX;
+        _positionY = positionY;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "ChangeStartPositionObjectCartoon";
+        _command.Parameters.AddWithValue("InIdObjectCartoon", _idObjectCartoon);
+        _command.Parameters.AddWithValue("InPositionX", _positionX);
+        _command.Parameters.AddWithValue("InPositionY", _positionY);
     }
 
     protected override void CreateQuery() => base.CreateQuery();

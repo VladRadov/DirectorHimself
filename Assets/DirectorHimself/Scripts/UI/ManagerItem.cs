@@ -15,6 +15,8 @@ public class ManagerItem : MonoBehaviour
 
     protected Item _item;
 
+    public Item DataItem => _item;
+
     public void SetConfigure(Item item)
     {
         _item = item;
@@ -44,6 +46,21 @@ public class ManagerItem : MonoBehaviour
         mainObject.transform.position = new Vector3(0, 0, 0);
         mainObject.SetPanelTimeline(_timeline);
         mainObject.SetFlagHasAnimation(_item.HasAnimation);
+        mainObject.Name = _item.NameSkin;
+    }
+
+    public ObjectCartoon LoadObjectCartoon()
+    {
+        var mainObject = PoolObjectsCartoon.GetObject(_item.MainObject);
+        mainObject.PlayWindow = _mainWindow;
+        mainObject.SetIcon(_item.Icon);
+        mainObject.transform.SetParent(_mainWindow);
+        mainObject.transform.position = new Vector3(0, 0, 0);
+        mainObject.SetPanelTimeline(_timeline);
+        mainObject.SetFlagHasAnimation(_item.HasAnimation);
+        mainObject.Name = _item.NameSkin;
+
+        return mainObject;
     }
 }
 

@@ -62,7 +62,7 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public float PositionFinishY { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         _transform = transform;
         _isMove = false;
@@ -80,6 +80,8 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public void SetFlagHasAnimation(bool value) => _hasAnimation = value;
 
+    public void SetStartPostion() => _transform.localPosition = new Vector3(PositionStartX, PositionStartY, 0);
+
     private void FixedUpdate()
     {
         if (_isMove)
@@ -90,6 +92,12 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
     {
         if(_isMove == false)
             DragAndDrop();
+    }
+
+    private void OnMouseUp()
+    {
+        var changeStartPositionObjectCartoon = new ChangeStartPositionObjectCartoon(Id, _transform.localPosition.x, _transform.localPosition.y);
+        changeStartPositionObjectCartoon.Execute();
     }
 
     private void DragAndDrop()
@@ -139,7 +147,7 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public void SetPanelTimeline(Transform timeline) => _timeline = timeline;
 
-    private void CreateIconOnTimemap()
+    public void CreateIconOnTimemap()
     {
         if (_hasAnimation)
         {
@@ -157,10 +165,16 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
             CreateSavePoint();
         }
         else if (_isSelected == false)
+        {
             Selected();
+
+            var addCartoonObject = new AddCartoonObject(Player.Instance.Id, Player.Instance.CurrentCartoon.Id, Name, this);
+            addCartoonObject.Execute();
+            Id = int.Parse(addCartoonObject.ParsingTableResult(0, 0).ToString());
+        }
     }
 
-    private void Selected()
+    public void Selected()
     {
         _isSelected = true;
         _isMove = true;
