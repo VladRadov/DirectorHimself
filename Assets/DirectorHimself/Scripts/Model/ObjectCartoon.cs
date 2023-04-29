@@ -22,7 +22,7 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     private ManagerIcon _icon;
 
-    private SavePoint _currentSavePoint;
+    private ParametrsObjectCartoonController _currentParametersObjectCartoon;
 
     [SerializeField] private FlagObjectCartoon _flagObjectCartoon;
 
@@ -30,7 +30,7 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     [SerializeField] private ManagerIcon _prefabManagerIcon;
 
-    [SerializeField] private SavePoint _prefabSavePoint;
+    [SerializeField] private ParametrsObjectCartoonController _parametrsObjectCartoonController;
 
     [SerializeField] private CapsuleCollider2D _collider;
 
@@ -104,18 +104,18 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
     {
         _transform.position = MousePosition - _deltaPosition;
         if (_hasAnimation)
-            _currentSavePoint.SetPosition((Vector2)_transform.position, _collider.size);
+            _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
     }
 
     public void CreateSavePoint()
     {
         if (_hasAnimation)
         {
-            PoolObjects<SavePoint>.DisactiveObjects();
-            _currentSavePoint = PoolObjects<SavePoint>.GetObject(_prefabSavePoint);
+            PoolObjects<ParametrsObjectCartoonController>.DisactiveObjects();
+            _currentParametersObjectCartoon = PoolObjects<ParametrsObjectCartoonController>.GetObject(_parametrsObjectCartoonController);
 
-            _currentSavePoint.SetPosition((Vector2)_transform.position, _collider.size);
-            _currentSavePoint.SetIcon(_icon);
+            _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
+            _currentParametersObjectCartoon.SetIcon(_icon);
 
             _icon.SetActivateIcon(true);
         }

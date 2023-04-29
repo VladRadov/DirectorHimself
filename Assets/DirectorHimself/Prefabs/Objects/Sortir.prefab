@@ -137,3 +137,5 @@ MonoBehaviour:
   _flagObjectCartoon: 16
   _rigidbody: {fileID: -6925141631886862973}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
+  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _collider: {fileID: 0}
