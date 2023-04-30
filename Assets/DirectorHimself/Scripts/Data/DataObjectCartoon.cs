@@ -17,4 +17,6 @@ public class DataObjectCartoon : IObjectCartoon
     public float PositionFinishX { get; set; }
 
     public float PositionFinishY { get; set; }
+
+    public bool IsChangedScale { get; set; }
 }

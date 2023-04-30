@@ -10,5 +10,9 @@ public class Cartoon : ICartoon
 
     public string Name { get; set; }
 
+    public IObjectCartoon CurrentObjectCartoon { get; set; }
+
     public List<IObjectCartoon> ObjectsCartoon { get { return _objectsCartoon; } set { _objectsCartoon = value; } }
+
+    public IObjectCartoon FindChandedScaleOfObjectCartoon() => _objectsCartoon.Find(objectCartoon => objectCartoon.IsChangedScale);
 }

@@ -17,4 +17,6 @@ public interface IObjectCartoon
     float PositionFinishX { get; set; }
 
     float PositionFinishY { get; set; }
+
+    bool IsChangedScale { get; set; }
 }

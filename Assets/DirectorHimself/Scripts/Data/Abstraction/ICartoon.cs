@@ -6,5 +6,9 @@ public interface ICartoon
 
     string Name { get; set; }
 
+    IObjectCartoon CurrentObjectCartoon { get; set; }
+
     List<IObjectCartoon> ObjectsCartoon { get; set; }
+
+    IObjectCartoon FindChandedScaleOfObjectCartoon();
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider2D))]
-[RequireComponent (typeof(Rigidbody2D))]
-[RequireComponent (typeof(SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 
 public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 {
@@ -52,15 +52,17 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public float PositionStartY { get; set; }
 
-    public float ScaleX { get; set; }
+    public float ScaleX { get { return _transform.localScale.x; } set { _transform.localScale = new Vector2(value, _transform.localScale.y); } }
 
-    public float ScaleY { get; set; }
+    public float ScaleY { get { return _transform.localScale.y; } set { _transform.localScale = new Vector2(_transform.localScale.x, value); } }
 
     public string NameAnimation { get; set; }
 
     public float PositionFinishX { get; set; }
 
     public float PositionFinishY { get; set; }
+
+    public bool IsChangedScale { get; set; }
 
     private void Awake()
     {
@@ -74,13 +76,13 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
         Name = NameFlagObjectCartoon.ToString();
         PositionStartX = _transform.position.x;
         PositionStartY = _transform.position.y;
-        ScaleX = _transform.localScale.x;
-        ScaleY = _transform.localScale.y;
     }
 
     public void SetFlagHasAnimation(bool value) => _hasAnimation = value;
 
     public void SetStartPostion() => _transform.localPosition = new Vector3(PositionStartX, PositionStartY, 0);
+
+    public void SetScale() => _transform.localScale = new Vector3(ScaleX, ScaleY, 0);
 
     private void FixedUpdate()
     {
@@ -116,6 +118,8 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
             _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
             _currentParametersObjectCartoon.SetIcon(_icon);
+            _currentParametersObjectCartoon.SaveSize.ChangingScaleEventHandler.RemoveAllListeners();
+            _currentParametersObjectCartoon.SaveSize.ChangingScaleEventHandler.AddListener(ChangeSize);
 
             _icon.SetActivateIcon(true);
         }
@@ -157,11 +161,18 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
         }
     }
 
+    private void ChangeSize(Vector3 newScale)
+    {
+        IsChangedScale = true;
+        _transform.localScale += newScale;
+    }
+
     private void OnMouseDown()
     {
         if (_isSelected && _isMove == false)
         {
             _deltaPosition = MousePosition - (Vector2)_transform.position;
+            Player.Instance.CurrentCartoon.CurrentObjectCartoon = this;
             CreateSavePoint();
         }
         else if (_isSelected == false)
@@ -171,6 +182,7 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
             var addCartoonObject = new AddCartoonObject(Player.Instance.Id, Player.Instance.CurrentCartoon.Id, Name, this);
             addCartoonObject.Execute();
             Id = int.Parse(addCartoonObject.ParsingTableResult(0, 0).ToString());
+            Player.Instance.CurrentCartoon.ObjectsCartoon.Add(this);
         }
     }
 

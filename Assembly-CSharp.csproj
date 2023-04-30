@@ -60,6 +60,7 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Player.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Model\ObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Model\SaveSize.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\FlagsObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Item.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Cartoon.cs" />
@@ -82,9 +83,8 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Services\PoolObjects.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ParametrsObjectCartoonController.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Model\SaveSize.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

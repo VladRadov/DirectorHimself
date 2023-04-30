@@ -21,6 +21,7 @@ public class ViewItems : MonoBehaviour
     public void View()
     {
         PoolObjects<ManagerItem>.DisactiveObjects();
+        PoolObjects<ParametrsObjectCartoonController>.DisactiveObjects();
 
         foreach (var person in _items)
         {

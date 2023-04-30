@@ -268,3 +268,32 @@ class ChangeStartPositionObjectCartoon : BaseSqlQuery
 
     protected override void CreateQuery() => base.CreateQuery();
 }
+
+class SaveScaleObjectCartoon : BaseSqlQuery
+{
+    private int _idCartoonObject;
+
+    private float _scaleX;
+
+    private float _scaleY;
+
+    public SaveScaleObjectCartoon(int idCartoonObject, float scaleX, float scaleY)
+    {
+        _idCartoonObject = idCartoonObject;
+        _scaleX = scaleX;
+        _scaleY = scaleY;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "SaveScaleObjectCartoon";
+        _command.Parameters.AddWithValue("InIdCartoonObject", _idCartoonObject);
+        _command.Parameters.AddWithValue("InScaleX", _scaleX);
+        _command.Parameters.AddWithValue("InScaleY", _scaleY);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}

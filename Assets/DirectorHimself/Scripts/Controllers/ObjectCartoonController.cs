@@ -13,29 +13,30 @@ public class ObjectCartoonController : MonoBehaviour
         var cartoon = Player.Instance.Cartoons.Find(cartoon => cartoon.Name == nameCartoon);
         for (int i = 0; i < objectsCartoon.CounItems(); i++)
         {
-            var objectCartoon = new ObjectCartoon()
-            {
-                Id = Converter.ToInt(objectsCartoon.ParsingTableResult(i, 0)),
-                Name = Convert.ToString(objectsCartoon.ParsingTableResult(i, 1)),
-                PositionStartX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 2))),
-                PositionStartY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 3))),
-                ScaleX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 4))),
-                ScaleY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 5))),
-                PositionFinishX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 6))),
-                PositionFinishY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 7))),
-                NameAnimation = Convert.ToString(objectsCartoon.ParsingTableResult(i, 9))
-            };
-            cartoon.ObjectsCartoon.Add(objectCartoon);
+            var id = Converter.ToInt(objectsCartoon.ParsingTableResult(i, 0));
+            var name = Convert.ToString(objectsCartoon.ParsingTableResult(i, 1));
+            var positionStartX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 2)));
+            var positionStartY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 3)));
+            var scaleX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 4)));
+            var scaleY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 5)));
+            var positionFinishX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 6)));
+            var positionFinishY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 7)));
+            var nameAnimation = Convert.ToString(objectsCartoon.ParsingTableResult(i, 9));
 
-            var item = PoolObjects<ManagerItem>.Find(findedItem => findedItem.DataItem.NameSkin == objectCartoon.Name);
+            var item = PoolObjects<ManagerItem>.Find(findedItem => findedItem.DataItem.NameSkin == name);
             var savedObjectCartoon = item.LoadObjectCartoon();
-            savedObjectCartoon.PositionStartX = objectCartoon.PositionStartX;
-            savedObjectCartoon.PositionStartY = objectCartoon.PositionStartY;
-            savedObjectCartoon.Id = objectCartoon.Id;
+            savedObjectCartoon.PositionStartX = positionStartX;
+            savedObjectCartoon.PositionStartY = positionStartY;
+            savedObjectCartoon.ScaleX = scaleX;
+            savedObjectCartoon.ScaleY = scaleY;
+            savedObjectCartoon.Id = id;
 
             savedObjectCartoon.Selected();
             savedObjectCartoon.AllocationOnPlayWindows();
             savedObjectCartoon.SetStartPostion();
+            savedObjectCartoon.SetScale();
+
+            cartoon.ObjectsCartoon.Add(savedObjectCartoon);
         }
     }
 }
