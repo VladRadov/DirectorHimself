@@ -833,6 +833,7 @@ GameObject:
   - component: {fileID: 5609976698018012330}
   - component: {fileID: 8831261507417606233}
   - component: {fileID: 1501950229966275002}
+  - component: {fileID: -4352708620673740127}
   m_Layer: 0
   m_Name: Kura_Ryaba
   m_TagString: Untagged
@@ -967,5 +968,17 @@ MonoBehaviour:
   _flagObjectCartoon: 4
   _rigidbody: {fileID: 5609976698018012330}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 9052112852777749438}
+  _sortingGroup: {fileID: -4352708620673740127}
+--- !u!210 &-4352708620673740127
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162711106544370561}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1

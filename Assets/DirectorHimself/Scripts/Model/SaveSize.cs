@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SaveSize : MonoBehaviour
+public class SaveSize : MonoBehaviour, ISaveElement
 {
     private ManagerIcon _icon;
 
     private Vector3 _speedScroll;
+
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public UnityEvent NonActiveEventHandler = new UnityEvent();
 
@@ -41,4 +43,6 @@ public class SaveSize : MonoBehaviour
         if (mouseScroll < -0.0001)
             ChangingScaleEventHandler.Invoke(- _speedScroll);
     }
+
+    public void SetIdLayer(int idLayer) => _spriteRenderer.sortingOrder = idLayer;
 }

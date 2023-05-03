@@ -19,4 +19,6 @@ public interface IObjectCartoon
     float PositionFinishY { get; set; }
 
     bool IsChangedScale { get; set; }
+
+    public int SortingLayerID { get; set; }
 }

@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2f9dd0b661ce8418cf98009922284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NonActiveEventHandler:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &4678994982516670593
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2389839022811542144}
-  - component: {fileID: 7029932429650157801}
   - component: {fileID: 5195219838433487425}
   m_Layer: 0
   m_Name: ManagerParametrsObjectCartoon
@@ -146,20 +148,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7029932429650157801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4816963052164261739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d7d7007190d2849a267d2d0521f1b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _savePoint: {fileID: 8196433717316795275}
-  _saveSize: {fileID: 2258754556559529790}
 --- !u!212 &5195219838433487425
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -256,6 +244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dbd4972d1cb40488829f3182f9fb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NonActiveEventHandler:
+    m_PersistentCalls:
+      m_Calls: []
+  ChangingScaleEventHandler:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &982347951220297287
 SpriteRenderer:
   m_ObjectHideFlags: 0

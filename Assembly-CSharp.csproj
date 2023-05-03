@@ -85,6 +85,8 @@
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ParametrsObjectCartoonController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerLayers.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Model\Abstractions\ISaveElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2213265500621135564}
   - component: {fileID: 8326809507196803252}
   - component: {fileID: 150593457552096579}
+  - component: {fileID: -8692327015278471235}
   m_Layer: 0
   m_Name: Kolobok
   m_TagString: Untagged
@@ -229,8 +230,20 @@ MonoBehaviour:
   _flagObjectCartoon: 3
   _rigidbody: {fileID: 2213265500621135564}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 1166076600966139297}
+  _sortingGroup: {fileID: -8692327015278471235}
+--- !u!210 &-8692327015278471235
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119133843460931904}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &2020408507667575806
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 7ad6ce173fef28344a568ff56259035e, type: 3}
   _nameSkin: "\u0414\u0435\u0434"
   _mainObject: {fileID: 4537224316775901368, guid: d1514f35d9233b147bc84c3fe9b5d8e8, type: 3}
-  _prefabIcon: {fileID: 0}
+  _prefabIcon: {fileID: 6645757885467551142, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
   _hasAnimation: 1

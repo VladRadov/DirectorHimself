@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2531172034838121312}
   - component: {fileID: -7467372749920607864}
   - component: {fileID: 4830319388068599823}
+  - component: {fileID: 5650943310900874531}
   m_Layer: 0
   m_Name: Guga
   m_TagString: Untagged
@@ -149,8 +150,20 @@ MonoBehaviour:
   _flagObjectCartoon: 2
   _rigidbody: {fileID: 2531172034838121312}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: -663303471630846373}
+  _sortingGroup: {fileID: 5650943310900874531}
+--- !u!210 &5650943310900874531
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600071290652954888}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &1887456333626502103
 GameObject:
   m_ObjectHideFlags: 0

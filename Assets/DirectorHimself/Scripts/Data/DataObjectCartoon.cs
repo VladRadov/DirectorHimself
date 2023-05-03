@@ -19,4 +19,6 @@ public class DataObjectCartoon : IObjectCartoon
     public float PositionFinishY { get; set; }
 
     public bool IsChangedScale { get; set; }
+
+    public int SortingLayerID { get; set; }
 }

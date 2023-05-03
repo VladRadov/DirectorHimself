@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -6925141631886862973}
   - component: {fileID: 2791415502069682781}
   - component: {fileID: -8580012785177598341}
+  - component: {fileID: -8425767268771354772}
   m_Layer: 0
   m_Name: Sortir
   m_TagString: Untagged
@@ -137,5 +138,17 @@ MonoBehaviour:
   _flagObjectCartoon: 16
   _rigidbody: {fileID: -6925141631886862973}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 0}
+  _sortingGroup: {fileID: -8425767268771354772}
+--- !u!210 &-8425767268771354772
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981056847180236235}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1

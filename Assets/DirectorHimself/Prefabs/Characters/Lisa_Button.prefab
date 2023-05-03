@@ -915,6 +915,7 @@ GameObject:
   - component: {fileID: 2806100314017723958}
   - component: {fileID: 6272580106254086287}
   - component: {fileID: 3351678862765313802}
+  - component: {fileID: -8496545796109240764}
   m_Layer: 0
   m_Name: Lisa_Button
   m_TagString: Untagged
@@ -1050,5 +1051,17 @@ MonoBehaviour:
   _flagObjectCartoon: 5
   _rigidbody: {fileID: 2806100314017723958}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 1283646429514410328}
+  _sortingGroup: {fileID: -8496545796109240764}
+--- !u!210 &-8496545796109240764
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810314594574108078}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1

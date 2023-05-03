@@ -210,6 +210,7 @@ class AddCartoonObject : BaseSqlQuery
         _command.Parameters.AddWithValue("InPositionY", _cartoonObject.PositionStartY);
         _command.Parameters.AddWithValue("InSizeX", _cartoonObject.ScaleX);
         _command.Parameters.AddWithValue("InSizeY", _cartoonObject.ScaleY);
+        _command.Parameters.AddWithValue("InIdLayer", _cartoonObject.SortingLayerID);
     }
 
     protected override void CreateQuery() => base.CreateQuery();
@@ -293,6 +294,31 @@ class SaveScaleObjectCartoon : BaseSqlQuery
         _command.Parameters.AddWithValue("InIdCartoonObject", _idCartoonObject);
         _command.Parameters.AddWithValue("InScaleX", _scaleX);
         _command.Parameters.AddWithValue("InScaleY", _scaleY);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class UpdateIdLayer : BaseSqlQuery
+{
+    private int _idCartoonObject;
+
+    private float _idLayer;
+
+    public UpdateIdLayer(int idCartoonObject, int idLayer)
+    {
+        _idCartoonObject = idCartoonObject;
+        _idLayer = idLayer;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "UpdateIdLayer";
+        _command.Parameters.AddWithValue("InIdObjectCartoon", _idCartoonObject);
+        _command.Parameters.AddWithValue("InIdLayer", _idLayer);
     }
 
     protected override void CreateQuery() => base.CreateQuery();

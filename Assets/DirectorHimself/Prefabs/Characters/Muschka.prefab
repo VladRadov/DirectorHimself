@@ -915,6 +915,7 @@ GameObject:
   - component: {fileID: 4274943343054330318}
   - component: {fileID: 203191843511736384}
   - component: {fileID: 1405503088799957195}
+  - component: {fileID: -9151685775565971681}
   m_Layer: 0
   m_Name: Muschka
   m_TagString: Untagged
@@ -1051,8 +1052,20 @@ MonoBehaviour:
   _flagObjectCartoon: 6
   _rigidbody: {fileID: 4274943343054330318}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 6408612077194017188}
+  _sortingGroup: {fileID: -9151685775565971681}
+--- !u!210 &-9151685775565971681
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718548769039100149}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &9132928126495555754
 GameObject:
   m_ObjectHideFlags: 0

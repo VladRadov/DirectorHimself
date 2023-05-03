@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SortingGroup))]
 
 public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 {
@@ -33,6 +35,10 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
     [SerializeField] private ParametrsObjectCartoonController _parametrsObjectCartoonController;
 
     [SerializeField] private CapsuleCollider2D _collider;
+
+    [SerializeField] private SortingGroup _sortingGroup;
+
+    public int SortingLayerID { get { return _sortingGroup.sortingOrder; } set { _sortingGroup.sortingOrder = value; } }
 
     public FlagObjectCartoon NameFlagObjectCartoon { get => _flagObjectCartoon; }
 
@@ -118,8 +124,12 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
             _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
             _currentParametersObjectCartoon.SetIcon(_icon);
+            _currentParametersObjectCartoon.ChangedLayerEventHandler.RemoveAllListeners();
+            _currentParametersObjectCartoon.ViewIdLayer(SortingLayerID);
             _currentParametersObjectCartoon.SaveSize.ChangingScaleEventHandler.RemoveAllListeners();
+
             _currentParametersObjectCartoon.SaveSize.ChangingScaleEventHandler.AddListener(ChangeSize);
+            _currentParametersObjectCartoon.ChangedLayerEventHandler.AddListener(OnChangedLayer);
 
             _icon.SetActivateIcon(true);
         }
@@ -197,5 +207,13 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
     {
         if (_isSelected && gameObject.activeSelf)
             StopMoving();
+    }
+
+    private void OnChangedLayer(int value)
+    {
+        SortingLayerID = value;
+
+        var updateIdLayer = new UpdateIdLayer(Id, value);
+        updateIdLayer.Execute();
     }
 }

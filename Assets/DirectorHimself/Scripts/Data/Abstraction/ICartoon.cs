@@ -11,4 +11,6 @@ public interface ICartoon
     List<IObjectCartoon> ObjectsCartoon { get; set; }
 
     IObjectCartoon FindChandedScaleOfObjectCartoon();
+
+    int MaxIdLayer();
 }

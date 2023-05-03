@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7610766862833959086}
   - component: {fileID: 8059450086436224878}
   - component: {fileID: 98442181150099088}
+  - component: {fileID: 5739396377998465085}
   m_Layer: 0
   m_Name: Polyana_2
   m_TagString: Untagged
@@ -137,5 +138,17 @@ MonoBehaviour:
   _flagObjectCartoon: 13
   _rigidbody: {fileID: 7610766862833959086}
   _prefabManagerIcon: {fileID: 1462099477434018628, guid: a90ef9425d88b7a459e396f32c98bea7, type: 3}
-  _parametrsObjectCartoonController: {fileID: 7029932429650157801, guid: 2443b9016efb5db498b16cf4df6de150, type: 3}
+  _parametrsObjectCartoonController: {fileID: 4165903499638421488, guid: 3059ea293ef560844a78665820421423, type: 3}
   _collider: {fileID: 0}
+  _sortingGroup: {fileID: 5739396377998465085}
+--- !u!210 &5739396377998465085
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550070301145558852}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SavePoint : MonoBehaviour
+public class SavePoint : MonoBehaviour, ISaveElement
 {
     private ManagerIcon _icon;
+
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     public UnityEvent NonActiveEventHandler = new UnityEvent();
 
@@ -19,4 +21,6 @@ public class SavePoint : MonoBehaviour
     {
         _icon = icon;
     }
+
+    public void SetIdLayer(int idLayer) => _spriteRenderer.sortingOrder = idLayer;
 }
