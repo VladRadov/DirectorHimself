@@ -32,6 +32,7 @@ public class ObjectCartoonController : MonoBehaviour
             savedObjectCartoon.ScaleX = scaleX;
             savedObjectCartoon.ScaleY = scaleY;
             savedObjectCartoon.Id = id;
+            savedObjectCartoon.NameAnimation = nameAnimation;
             savedObjectCartoon.SortingLayerID = idLayer;
 
             savedObjectCartoon.Selected();
