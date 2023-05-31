@@ -15,6 +15,8 @@ public class SaveAnimation : MonoBehaviour, ISaveElement
     {
         _icon.SetActivateIcon(false);
         NonActiveEventHandler.Invoke();
+
+        EventBus.InvokeEvents<IViewAllAnimations>(handler => handler.HandleViewAllAnimations());
     }
 
     public void SetIcon(ManagerIcon icon) => _icon = icon;

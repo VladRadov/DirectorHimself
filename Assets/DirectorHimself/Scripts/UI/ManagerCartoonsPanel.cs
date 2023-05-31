@@ -15,6 +15,8 @@ public class ManagerCartoonsPanel : MonoBehaviour
 
     public UnityEvent<string> AddCartoonEventhandler = new UnityEvent<string>();
 
+    public UnityEvent LoadingEntryCartoonEventHandler = new UnityEvent();
+
     public void CreateViewCartoonName(string nameCartoon)
     {
         var viewCartoonName = PoolObjects<ViewNameCartoon>.GetObject(_prefabViewCartoonName);
@@ -33,5 +35,6 @@ public class ManagerCartoonsPanel : MonoBehaviour
     {
         gameObject.SetActive(false);
         _objectCartoonController.CreateObjectsCartoon(nameCartoon);
+        LoadingEntryCartoonEventHandler.Invoke();
     }
 }

@@ -22,8 +22,8 @@ public class ObjectCartoonController : MonoBehaviour
             var scaleY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 5)));
             var positionFinishX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 6)));
             var positionFinishY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 7)));
-            var nameAnimation = Convert.ToString(objectsCartoon.ParsingTableResult(i, 9));
-            var idLayer = Converter.ToInt(objectsCartoon.ParsingTableResult(i, 10));
+            //var nameAnimation = Convert.ToString(objectsCartoon.ParsingTableResult(i, 9));
+            var idLayer = Converter.ToInt(objectsCartoon.ParsingTableResult(i, 9));
 
             var item = PoolObjects<ManagerItem>.Find(findedItem => findedItem.DataItem.NameSkin == name);
             var savedObjectCartoon = item.LoadObjectCartoon();
@@ -32,7 +32,7 @@ public class ObjectCartoonController : MonoBehaviour
             savedObjectCartoon.ScaleX = scaleX;
             savedObjectCartoon.ScaleY = scaleY;
             savedObjectCartoon.Id = id;
-            savedObjectCartoon.NameAnimation = nameAnimation;
+            //savedObjectCartoon.NameAnimation = nameAnimation;
             savedObjectCartoon.SortingLayerID = idLayer;
 
             savedObjectCartoon.Selected();

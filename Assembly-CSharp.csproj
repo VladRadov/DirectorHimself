@@ -56,41 +56,50 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\Subscribers\IViewAllAnimations.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\Converter.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\ISaveElement.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\EventBus.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\Subscribers\IGlobalSubscriber.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Player.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\ObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Animation.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\SaveSize.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Data\FlagsObjectsCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Enums\FlagsObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Item.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerLayers.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Cartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\GameController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\CartoonsController.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\AnimationController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerItem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\ICartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\IModel.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewNameCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\Subscribers\IViewSelectedObjects.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewItems.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerCartoonsPanel.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Views\AnimationIconView.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\DataObjectCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\IAnimation.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\SavePoint.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ControllerScenes.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ObjectCartoonController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\SQL.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\ManagerObjectsCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\StringSqlConnection.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\Enums\AnimationGroup.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerPropertiesPanel.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerAddCartoon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Data\AnimationData.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Services\PoolObjects.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Views\AnimationsView.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerIcon.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Views\IView.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\SCLoginSystem.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ParametrsObjectCartoonController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\IAnimation.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Models\Animation.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Controllers\AnimationController.cs" />
-    <Compile Include="Assets\DirectorHimself\Scripts\Data\AnimationData.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\SaveAnimation.cs" />
   </ItemGroup>
   <ItemGroup>

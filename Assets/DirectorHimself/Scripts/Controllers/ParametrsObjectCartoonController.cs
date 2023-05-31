@@ -13,6 +13,8 @@ public class ParametrsObjectCartoonController : MonoBehaviour
 
     [SerializeField] private SaveSize _saveSize;
 
+    [SerializeField] private SaveAnimation _saveAnimation;
+
     [SerializeField] private GameObject _parentPointsSave;
 
     [SerializeField] private ManagerLayers _managerLayers;
@@ -26,8 +28,11 @@ public class ParametrsObjectCartoonController : MonoBehaviour
     private void Start()
     {
         _canvas.worldCamera = Camera.main;
+
         _savePoint.NonActiveEventHandler.AddListener(CloseParametersObjectCartoonCotroller);
         _saveSize.NonActiveEventHandler.AddListener(CloseParametersObjectCartoonCotroller);
+        _saveAnimation.NonActiveEventHandler.AddListener(CloseParametersObjectCartoonCotroller);
+
         _managerLayers.ValueLayer.onValueChanged.AddListener(ChangedLayer);
     }
 
@@ -39,6 +44,7 @@ public class ParametrsObjectCartoonController : MonoBehaviour
         _icon = icon;
         _savePoint.SetIcon(_icon);
         _saveSize.SetIcon(_icon);
+        _saveAnimation.SetIcon(_icon);
     }
 
     public void ViewIdLayer(int idLayer)
@@ -58,10 +64,11 @@ public class ParametrsObjectCartoonController : MonoBehaviour
 
     private void SetIdLayerUIParameters(int idLayer)
     {
-        var maxLayer = Player.Instance.CurrentCartoon.MaxIdLayer();
+        var maxLayer = Player.Instance.CurrentCartoon.MaxIdLayer() + 1;
         _canvas.sortingOrder = maxLayer;
         _savePoint.SetIdLayer(maxLayer);
         _saveSize.SetIdLayer(maxLayer);
+        _saveAnimation.SetIdLayer(maxLayer);
     }
 
     public void SetPosition(Vector2 positionObjectCartoon, Vector2 sizeCollider)

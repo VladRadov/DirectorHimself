@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class DataObjectCartoon : IObjectCartoon
 {
     public int Id { get; set; }
@@ -21,4 +23,12 @@ public class DataObjectCartoon : IObjectCartoon
     public bool IsChangedScale { get; set; }
 
     public int SortingLayerID { get; set; }
+
+    public bool IsSettingObject { get; set; }
+
+    public bool IsToolAnimation { get; set; }
+
+    public Vector3 ScaleBeforeEntryAnimation { get; set; }
+
+    public ParametrsObjectCartoonController ParametrsObjectCartoonController { get; }
 }

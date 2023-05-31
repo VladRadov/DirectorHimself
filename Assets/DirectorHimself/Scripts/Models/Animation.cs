@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Animation : IAnimation
 {
-    public string Name { get; set; }
+    public string Name { get; }
 
-    public float Duration { get; set; }
+    public Sprite Icon { get; }
 
-    public Animation Clip { get; set; }
+    public float Duration { get; }
+
+    public Animation Clip { get; }
+
+    public AnimationGroup GroupAnimation { get; }
 }

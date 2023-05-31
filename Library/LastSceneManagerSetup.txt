@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/DirectorHimself/Scenes/Game.unity
+- path: Assets/DirectorHimself/Scenes/SingIn.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

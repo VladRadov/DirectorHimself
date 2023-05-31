@@ -70,11 +70,21 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public bool IsChangedScale { get; set; }
 
+    public bool IsSettingObject { get; set; }
+
+    public bool IsToolAnimation { get; set; }
+
+    public Vector3 ScaleBeforeEntryAnimation { get; set; }
+
+    public ParametrsObjectCartoonController ParametrsObjectCartoonController => _currentParametersObjectCartoon;
+
     private void Awake()
     {
         _transform = transform;
         _isMove = false;
         _isSelected = false;
+        IsSettingObject = false;
+        IsToolAnimation = false;
 
         _rigidbody.interpolation = RigidbodyInterpolation2D.Interpolate;
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
@@ -110,9 +120,21 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     private void DragAndDrop()
     {
-        _transform.position = MousePosition - _deltaPosition;
-        if (_hasAnimation)
-            _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
+        if (IsToolAnimation == false)
+        {
+            SetPositionDragAndDrop();
+            if (_hasAnimation)
+                _currentParametersObjectCartoon.SetPosition((Vector2)_transform.position, _collider.size);
+        }
+    }
+
+    private void SetPositionDragAndDrop()
+    {
+        var newPossition = MousePosition - _deltaPosition;
+        PositionStartX = newPossition.x;
+        PositionStartY = newPossition.y;
+
+        _transform.position = newPossition;
     }
 
     public void CreateSavePoint()
@@ -179,21 +201,33 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     private void OnMouseDown()
     {
-        if (_isSelected && _isMove == false)
+        if (!IsToolAnimation)
         {
-            _deltaPosition = MousePosition - (Vector2)_transform.position;
-            Player.Instance.CurrentCartoon.CurrentObjectCartoon = this;
-            CreateSavePoint();
-        }
-        else if (_isSelected == false)
-        {
-            Selected();
+            if (_isSelected && _isMove == false)
+            {
+                EntryCartoonObjectForSetting();
+                _deltaPosition = MousePosition - (Vector2)_transform.position;
+                Player.Instance.CurrentCartoon.CurrentObjectCartoon = this;
+                CreateSavePoint();
+            }
+            else if (_isSelected == false)
+            {
+                Selected();
 
-            var addCartoonObject = new AddCartoonObject(Player.Instance.Id, Player.Instance.CurrentCartoon.Id, Name, this);
-            addCartoonObject.Execute();
-            Id = int.Parse(addCartoonObject.ParsingTableResult(0, 0).ToString());
-            Player.Instance.CurrentCartoon.ObjectsCartoon.Add(this);
+                var addCartoonObject = new AddCartoonObject(Player.Instance.Id, Player.Instance.CurrentCartoon.Id, Name, this);
+                addCartoonObject.Execute();
+                Id = int.Parse(addCartoonObject.ParsingTableResult(0, 0).ToString());
+                Player.Instance.CurrentCartoon.ObjectsCartoon.Add(this);
+            }
         }
+    }
+
+    private void EntryCartoonObjectForSetting()
+    {
+        if (Player.Instance.CurrentCartoon.CurrentObjectCartoon != null)
+            Player.Instance.CurrentCartoon.CurrentObjectCartoon.IsSettingObject = false;
+
+        IsSettingObject = true;
     }
 
     public void Selected()
@@ -215,5 +249,17 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
         var updateIdLayer = new UpdateIdLayer(Id, value);
         updateIdLayer.Execute();
+    }
+
+    public void SetTransform(Vector3 scale, Vector3 position)
+    {
+        _transform.localScale = scale;
+        _transform.position = position;
+    }
+
+    public void SetLocalTransform(Vector3 scale, Vector3 position)
+    {
+        _transform.localScale = scale;
+        _transform.localPosition = position;
     }
 }

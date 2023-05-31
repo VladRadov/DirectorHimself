@@ -419,6 +419,7 @@ MonoBehaviour:
   _canvas: {fileID: 1637801314410324968}
   _savePoint: {fileID: 7423399570666536480}
   _saveSize: {fileID: 712156788457771669}
+  _saveAnimation: {fileID: 2089021466805059192}
   _parentPointsSave: {fileID: 6080960940617016000}
   _managerLayers: {fileID: 5577995657348051599}
   ChangedLayerEventHandler:
@@ -801,6 +802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 3380946494622054759}
+  NonActiveEventHandler:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &4239425796536315230
 CircleCollider2D:
   m_ObjectHideFlags: 0

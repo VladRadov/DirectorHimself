@@ -8,14 +8,11 @@ public class PlayerController
 {
     private CartoonsController _cartoonsController;
 
-    private AnimationController _animationController;
-
     public UnityEvent<string> AddedCartoon = new UnityEvent<string>();
 
-    public PlayerController(CartoonsController cartoonsController, AnimationController animationController)
+    public PlayerController(CartoonsController cartoonsController)
     {
         _cartoonsController = cartoonsController;
-        _animationController = animationController;
 
         AddedCartoon.AddListener(_cartoonsController.ShowAddedCartoon);
         _cartoonsController.AddListenerForAddCartoonEventhandler(AddCartoon);

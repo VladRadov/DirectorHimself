@@ -6,14 +6,21 @@ public class GameController : MonoBehaviour
 {
     private PlayerController _playerController;
 
+    private AnimationController _animationController;
+
     [SerializeField] private ManagerCartoonsPanel _managerCartoonsPanel;
 
-    [SerializeField] private AnimationController _animationController;
+    [SerializeField] private AnimationsView _animationsView;
+
+    [SerializeField] private List<AnimationData> _animations;
 
     private void Start()
     {
-        _playerController = new PlayerController(new CartoonsController(_managerCartoonsPanel), _animationController);
+        _playerController = new PlayerController(new CartoonsController(_managerCartoonsPanel));
         _playerController.LoadData();
         _playerController.ShowSavedCartoons();
+
+        _animationController = new AnimationController(_animationsView, _animations);
+        EventBus.Subscribe(_animationsView);
     }
 }

@@ -1,8 +1,14 @@
-public interface IAnimation
+using UnityEngine;
+
+public interface IAnimation : IModel
 {
-    string Name { get; set; }
+    string Name { get; }
 
-    float Duration { get; set; }
+    Sprite Icon { get; }
 
-    Animation Clip { get; set; }
+    float Duration { get; }
+
+    Animation Clip { get; }
+
+    AnimationGroup GroupAnimation { get; }
 }
