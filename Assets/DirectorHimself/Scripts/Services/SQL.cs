@@ -49,6 +49,14 @@ public class Connection
     }
 }
 
+class DataTableNull : DataTable
+{
+    public DataTableNull()
+    {
+        
+    }
+}
+
 class BaseSqlQuery
 {
     protected MySqlCommand _command;
@@ -101,7 +109,7 @@ class BaseSqlQuery
 
     public int CounColumns() => _tableResult.Columns.Count;
 
-    public object ParsingTableResult(int indexRow, int indexColumn) => _tableResult.Rows[indexRow].ItemArray[indexColumn];
+    public object ParsingTableResult(int indexRow, int indexColumn) => CounItems() == 0 ? new DataTableNull() : _tableResult.Rows[indexRow].ItemArray[indexColumn];
 }
 
 class GetPlayer : BaseSqlQuery
@@ -319,6 +327,64 @@ class UpdateIdLayer : BaseSqlQuery
         _command.CommandText = "UpdateIdLayer";
         _command.Parameters.AddWithValue("InIdObjectCartoon", _idCartoonObject);
         _command.Parameters.AddWithValue("InIdLayer", _idLayer);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class AddAnimation : BaseSqlQuery
+{
+    private int _idCartoonObject;
+
+    private string _nameAnimation;
+
+    private string _nameAnimationGroup;
+
+    private float _duration;
+
+    private int _quantity;
+
+    public AddAnimation(int idCartoonObject, string nameAnimation, string nameAnimationGroup, float duration, int quantity)
+    {
+        _idCartoonObject = idCartoonObject;
+        _nameAnimation = nameAnimation;
+        _nameAnimationGroup = nameAnimationGroup;
+        _duration = duration;
+        _quantity = quantity;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "AddAnimation";
+        _command.Parameters.AddWithValue("InName", _nameAnimation);
+        _command.Parameters.AddWithValue("InNameAnimationGroup", _nameAnimationGroup);
+        _command.Parameters.AddWithValue("InDuration", _duration);
+        _command.Parameters.AddWithValue("InQuantity", _quantity);
+        _command.Parameters.AddWithValue("InIDCartoonObject", _idCartoonObject);
+    }
+
+    protected override void CreateQuery() => base.CreateQuery();
+}
+
+class GetAnimation : BaseSqlQuery
+{
+    private int _idCartoonObject;
+
+    public GetAnimation(int idCartoonObject)
+    {
+        _idCartoonObject = idCartoonObject;
+    }
+
+    public override void Execute() => base.Execute();
+
+    protected override void CreateCommand()
+    {
+        _command.CommandType = CommandType.StoredProcedure;
+        _command.CommandText = "GetAnimation";
+        _command.Parameters.AddWithValue("InIdObjectCartoon", _idCartoonObject);
     }
 
     protected override void CreateQuery() => base.CreateQuery();

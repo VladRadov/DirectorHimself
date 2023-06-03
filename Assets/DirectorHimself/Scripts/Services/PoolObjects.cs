@@ -36,6 +36,8 @@ public class PoolObjects<T> where T : MonoBehaviour
     }
 
     public static T Find(System.Predicate<T> predicat) => _objects.Find(predicat);
+
+    public static List<T> FindAll(System.Predicate<T> predicat) => _objects.FindAll(predicat);
 }
 
 class PoolObjectsCartoon : PoolObjects<ObjectCartoon>

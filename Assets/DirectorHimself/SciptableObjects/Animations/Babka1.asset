@@ -15,5 +15,4 @@ MonoBehaviour:
   _name: "\u0422\u0430\u043D\u0435\u0446 \u0431\u0430\u0431\u043A\u0438"
   _icon: {fileID: 21300000, guid: 0ffff9e41bb34804a8670894aa65ff2a, type: 3}
   _duration: 2000
-  _clip: {fileID: 0}
-  _animationGroup: 1
+  _animationGroup: 0

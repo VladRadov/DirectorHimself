@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IObjectCartoon
@@ -28,7 +29,11 @@ public interface IObjectCartoon
 
     bool IsToolAnimation { get; set; }
 
+    List<Animation> Animations { get; set; }
+
     Vector3 ScaleBeforeEntryAnimation { get; set; }
 
     ParametrsObjectCartoonController ParametrsObjectCartoonController { get; }
+
+    void UpdateAnimtaion(Animation animation);
 }

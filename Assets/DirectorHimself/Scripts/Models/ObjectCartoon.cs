@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -74,6 +75,8 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
 
     public bool IsToolAnimation { get; set; }
 
+    public List<Animation> Animations { get; set; }
+
     public Vector3 ScaleBeforeEntryAnimation { get; set; }
 
     public ParametrsObjectCartoonController ParametrsObjectCartoonController => _currentParametersObjectCartoon;
@@ -92,6 +95,18 @@ public class ObjectCartoon : MonoBehaviour, IObjectCartoon
         Name = NameFlagObjectCartoon.ToString();
         PositionStartX = _transform.position.x;
         PositionStartY = _transform.position.y;
+    }
+
+    public void UpdateAnimtaion(Animation animation)
+    {
+        if (Animations == null)
+            Animations = new List<Animation>();
+
+        var findedAnimation = Animations.Find(animationTemp => animationTemp.Name == animation.Name && animationTemp.GroupAnimation == animation.GroupAnimation);
+        if (findedAnimation == null)
+            Animations.Add(animation);
+        else
+            findedAnimation.Quantity = animation.Quantity;
     }
 
     public void SetFlagHasAnimation(bool value) => _hasAnimation = value;

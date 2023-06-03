@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DataObjectCartoon : IObjectCartoon
@@ -28,7 +29,11 @@ public class DataObjectCartoon : IObjectCartoon
 
     public bool IsToolAnimation { get; set; }
 
+    public List<Animation> Animations { get; set; }
+
     public Vector3 ScaleBeforeEntryAnimation { get; set; }
 
     public ParametrsObjectCartoonController ParametrsObjectCartoonController { get; }
+
+    public void UpdateAnimtaion(Animation animation) { }
 }

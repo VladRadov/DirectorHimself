@@ -40,27 +40,31 @@ public class ManagerItem : MonoBehaviour
     {
         PoolObjectsCartoon.DisactiveObjects();
         var mainObject = PoolObjectsCartoon.GetObject(_item.MainObject);
-        mainObject.PlayWindow = _mainWindow;
-        mainObject.SetIcon(_item.Icon);
-        mainObject.transform.SetParent(_parent);
-        mainObject.transform.position = new Vector3(0, 0, 0);
-        mainObject.SetPanelTimeline(_timeline);
-        mainObject.SetFlagHasAnimation(_item.HasAnimation);
-        mainObject.Name = _item.NameSkin;
+
+        new BuilderCartoonObject(mainObject)
+            .SetPlayWindow(_mainWindow)
+            .SetIcon(_item.Icon)
+            .SetParent(_parent)
+            .SetPosition(new Vector3(0, 0, 0))
+            .SetPanelTimeline(_timeline)
+            .SetFlagHasAnimation(_item.HasAnimation)
+            .SetName(_item.NameSkin)
+            .Build();
     }
 
     public ObjectCartoon LoadObjectCartoon()
     {
         var mainObject = PoolObjectsCartoon.GetObject(_item.MainObject);
-        mainObject.PlayWindow = _mainWindow;
-        mainObject.SetIcon(_item.Icon);
-        mainObject.transform.SetParent(_mainWindow);
-        mainObject.transform.position = new Vector3(0, 0, 0);
-        mainObject.SetPanelTimeline(_timeline);
-        mainObject.SetFlagHasAnimation(_item.HasAnimation);
-        mainObject.Name = _item.NameSkin;
 
-        return mainObject;
+        return new BuilderCartoonObject(mainObject)
+            .SetPlayWindow(_mainWindow)
+            .SetIcon(_item.Icon)
+            .SetParent(_mainWindow)
+            .SetPosition(new Vector3(0, 0, 0))
+            .SetPanelTimeline(_timeline)
+            .SetFlagHasAnimation(_item.HasAnimation)
+            .SetName(_item.NameSkin)
+            .Build();
     }
 }
 

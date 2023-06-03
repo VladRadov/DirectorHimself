@@ -1,5 +1,6 @@
 public enum AnimationGroup
 {
     People,
-    Animals
+    Animals,
+    Entity
 }

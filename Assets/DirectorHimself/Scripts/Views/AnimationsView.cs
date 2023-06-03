@@ -19,4 +19,6 @@ public class AnimationsView : MonoBehaviour, IView, IViewAllAnimations
         transform.gameObject.SetActive(false);
         EventBus.InvokeEvents<IViewSelectedObjects>(handler => handler.ViewSelectedObjects());
     }
+
+    public void SaveEntryAnimations() => EventBus.InvokeEvents<ISaveAnimations>(handler => handler.SaveAnimations());
 }

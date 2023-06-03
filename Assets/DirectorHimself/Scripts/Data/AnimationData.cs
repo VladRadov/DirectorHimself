@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/Animation")]
-public class AnimationData : ScriptableObject, IAnimation
+public class AnimationData : ScriptableObject
 {
     [SerializeField] private string _name;
 
@@ -24,4 +24,8 @@ public class AnimationData : ScriptableObject, IAnimation
     public Animation Clip => Clip;
 
     public AnimationGroup GroupAnimation => _animationGroup;
+
+    public int Quantity { get; set; }
+
+    public void OnChangedQuantity(int quantity) => Quantity = quantity;
 }

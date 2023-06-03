@@ -2,13 +2,17 @@ using UnityEngine;
 
 public interface IAnimation : IModel
 {
-    string Name { get; }
+    int ID { get; set; }
 
-    Sprite Icon { get; }
+    string Name { get; set; }
 
-    float Duration { get; }
+    Sprite Icon { get; set; }
 
-    Animation Clip { get; }
+    float Duration { get; set; }
 
-    AnimationGroup GroupAnimation { get; }
+    int Quantity { get; set; }
+
+    Animation Clip { get; set; }
+
+    AnimationGroup GroupAnimation { get; set; }
 }

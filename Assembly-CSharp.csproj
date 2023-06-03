@@ -78,11 +78,13 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\IModel.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewNameCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\Subscribers\IViewSelectedObjects.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\Subscribers\ISaveAnimations.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ViewItems.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\UI\ManagerCartoonsPanel.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Views\AnimationIconView.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\DataObjectCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\Abstractions\IAnimation.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Mappers\AnimationMapper.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\SavePoint.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ControllerScenes.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ObjectCartoonController.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Assets\DirectorHimself\Scripts\Controllers\ParametrsObjectCartoonController.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Data\Abstraction\IObjectCartoon.cs" />
     <Compile Include="Assets\DirectorHimself\Scripts\Models\SaveAnimation.cs" />
+    <Compile Include="Assets\DirectorHimself\Scripts\Services\BuilderCartoonObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DirectorHimself\Plugins\MySql.Data.dll" />

@@ -22,25 +22,44 @@ public class ObjectCartoonController : MonoBehaviour
             var scaleY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 5)));
             var positionFinishX = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 6)));
             var positionFinishY = Converter.ToFloat(Convert.ToString(objectsCartoon.ParsingTableResult(i, 7)));
-            //var nameAnimation = Convert.ToString(objectsCartoon.ParsingTableResult(i, 9));
             var idLayer = Converter.ToInt(objectsCartoon.ParsingTableResult(i, 9));
 
             var item = PoolObjects<ManagerItem>.Find(findedItem => findedItem.DataItem.NameSkin == name);
-            var savedObjectCartoon = item.LoadObjectCartoon();
-            savedObjectCartoon.PositionStartX = positionStartX;
-            savedObjectCartoon.PositionStartY = positionStartY;
-            savedObjectCartoon.ScaleX = scaleX;
-            savedObjectCartoon.ScaleY = scaleY;
-            savedObjectCartoon.Id = id;
-            //savedObjectCartoon.NameAnimation = nameAnimation;
-            savedObjectCartoon.SortingLayerID = idLayer;
 
-            savedObjectCartoon.Selected();
-            savedObjectCartoon.AllocationOnPlayWindows();
-            savedObjectCartoon.SetStartPostion();
-            savedObjectCartoon.SetScale();
+            var objectCartoon = new BuilderCartoonObject(item.LoadObjectCartoon())
+                .SetPositionStart(positionStartX, positionStartY)
+                .SetScale(scaleX, scaleY)
+                .SetId(id)
+                .SetSortingLayerID(idLayer)
+                .Build();
 
-            cartoon.ObjectsCartoon.Add(savedObjectCartoon);
+            objectCartoon.Selected();
+            objectCartoon.AllocationOnPlayWindows();
+            objectCartoon.SetStartPostion();
+            objectCartoon.SetScale();
+
+            var getAnimation = new GetAnimation(objectCartoon.Id);
+            getAnimation.Execute();
+            for (int j = 0; j < getAnimation.CounItems(); j++)
+            {
+                var idAnimation = getAnimation.ParsingTableResult(j, 0);
+                var nameAnimation = getAnimation.ParsingTableResult(j, 1);
+                var nameGroupAnimtions = getAnimation.ParsingTableResult(j, 2);
+                var duration = getAnimation.ParsingTableResult(j, 3);
+                var quantity = getAnimation.ParsingTableResult(j, 4);
+
+                var animation = new Animation()
+                {
+                    ID = Converter.ToInt(idAnimation),
+                    Name = nameAnimation.ToString(),
+                    GroupAnimation = Converter.ToEnumAnimationGroup(nameGroupAnimtions.ToString()),
+                    Duration = Converter.ToFloat(duration),
+                    Quantity = Converter.ToInt(quantity)
+                };
+                objectCartoon.UpdateAnimtaion(animation);
+            }
+
+            cartoon.ObjectsCartoon.Add(objectCartoon);
         }
     }
 }
