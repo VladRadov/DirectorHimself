@@ -11,7 +11,7 @@ public class AnimationData : ScriptableObject
 
     [SerializeField] private float _duration;
 
-    [SerializeField] private Animation _clip;
+    [SerializeField] private RuntimeAnimatorController _animatorController;
 
     [SerializeField] private AnimationGroup _animationGroup;
 
@@ -21,7 +21,7 @@ public class AnimationData : ScriptableObject
 
     public float Duration => _duration;
 
-    public Animation Clip => Clip;
+    public RuntimeAnimatorController AnimatorController => _animatorController;
 
     public AnimationGroup GroupAnimation => _animationGroup;
 
